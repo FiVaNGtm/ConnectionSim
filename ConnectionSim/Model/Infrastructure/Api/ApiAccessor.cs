@@ -1,4 +1,4 @@
-﻿#line 1 "C:\ApiAccessor.sc"
+﻿#line 1 "C:\ApiAccessor.cs"
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -100,7 +100,6 @@ namespace ConnectionSim.Model.Infrastructure.Api
         {
             try
             {
-                if(ar.IsCompleted) return;
                 HttpListenerContext ctx = HttpListener.EndGetContext(ar);
                 StreamReader r = new StreamReader(ctx.Request.InputStream);
                 StreamWriter w = new StreamWriter(ctx.Response.OutputStream);
@@ -111,9 +110,8 @@ namespace ConnectionSim.Model.Infrastructure.Api
 
                 w.Close();
                 r.Close();
-
             }
-            catch (HttpListenerException e)
+            catch (Exception e)
             {
                 
             }
