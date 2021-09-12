@@ -40,9 +40,11 @@ namespace ConnectionSim.Model.Infrastructure.Api
             {
                 case EWorkingStatus.Work: 
                     await StartAsync();
+                    ReceiveData.Add("aaa");
                     break;
                 case EWorkingStatus.Stop:
                     Stop();
+                    SendData.Add("bbb");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(status), status, null);
