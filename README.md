@@ -10,6 +10,7 @@ WPF_MVVM_sample
  MVVM
 
 ### env
+ C#
  .NET5
  Windows10
  
