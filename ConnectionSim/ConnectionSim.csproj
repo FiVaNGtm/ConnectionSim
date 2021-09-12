@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+    <AssemblyVersion>0.0.0.1</AssemblyVersion>
+    <FileVersion>0.0.0.1</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="setting.json" />
+    <None Remove="View\Media\error_off.png" />
+    <None Remove="View\Media\error_on.png" />
+    <None Remove="View\Media\setting.png" />
+    <None Remove="View\Media\working.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="setting.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.7.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\Media\error_on.png" />
+    <Resource Include="View\Media\error_off.png" />
+    <Resource Include="View\Media\setting.png" />
+    <Resource Include="View\Media\working.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NLog.config">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>NLog.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties setting_1json__JsonSchema="https://carafe.fm/schema/draft-02/bundle.schema.json" /></VisualStudio></ProjectExtensions>
+
+</Project>
